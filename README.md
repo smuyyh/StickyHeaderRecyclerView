@@ -1,4 +1,4 @@
-# StickyHeaderRecyclerView
+# StickyHeaderRecyclerView  ![](https://img.shields.io/github/v/release/smuyyh/StickyHeaderRecyclerView.svg) [![GitHub license](https://img.shields.io/github/license/smuyyh/StickyHeaderRecyclerView)](https://github.com/smuyyh/StickyHeaderRecyclerView/blob/master/LICENSE)
 
 RecyclerView 悬浮吸顶 Header，支持点击事件与状态绑定
 
@@ -14,7 +14,7 @@ compile 'com.yuyang:stickyheaders:1.0.0'
 
 ### Header Model
 
-Header Model 需要实现 StickyHeaderModel 接口
+Header Model 需要实现 ```StickyHeaderModel``` 接口
 
 ```java
 public class HeaderItem implements StickyHeaderModel {
@@ -45,7 +45,7 @@ public class Item {
 
 ### Adapter
 
-RecyclerView Adapter 需要实现 StickyHeaderProvider 接口，并在 getAdapterData() 返回 model 数据，用于判断对应position是否为Header
+RecyclerView Adapter 需要实现 ```StickyHeaderProvider``` 接口，并在 ```getAdapterData()``` 返回 model 数据，用于判断对应 position 是否为 Header
 
 ```java
 public final class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.BaseViewHolder> implements StickyHeaderProvider {
