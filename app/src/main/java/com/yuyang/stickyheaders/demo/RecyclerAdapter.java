@@ -13,7 +13,7 @@ import com.yuyang.stickyheaders.demo.model.Item;
 import java.util.ArrayList;
 import java.util.List;
 
-final class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.BaseViewHolder> implements StickyHeaderProvider {
+public final class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.BaseViewHolder> implements StickyHeaderProvider {
 
     private final List<Object> dataList = new ArrayList<>();
 
