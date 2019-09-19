@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 26
@@ -18,6 +19,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
@@ -25,4 +31,27 @@ dependencies {
 
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile("com.android.support:recyclerview-v7:26.1.0")
+}
+
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+}
+
+task androidJavadocsJar(type: Jar) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+publish {
+    userOrg = 'smuyyh'
+    repoName = "maven"
+    groupId = 'com.yuyang'
+    artifactId = 'stickyheaders'
+    publishVersion = '1.0.0'
+    desc = 'RecyclerView Sticky Headers'
+    website = 'https://github.com/smuyyh/StickyHeaderRecyclerView'
 }

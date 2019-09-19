@@ -4,6 +4,12 @@ RecyclerView 悬浮吸顶 Header，支持点击事件与状态绑定
 
 <img src="https://github.com/smuyyh/StickyHeaderRecyclerView/blob/master/art/screenshot.gif" width="216" height="400" ></img>
 
+## 依赖
+
+```
+compile 'com.yuyang:stickyheaders:1.0.0'
+```
+
 ## 用法
 
 ### Header Model
@@ -125,7 +131,7 @@ recyclerView.setAdapter(adapter);
 ## LICENSE
 
 ```
-  Copyright (c) 2016 smuyyh. All right reserved.
+  Copyright (c) 2019 smuyyh. All right reserved.
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
