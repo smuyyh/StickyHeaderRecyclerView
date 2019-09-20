@@ -14,7 +14,7 @@ dependencies {
 
 ## 用法
 
-### 1. Header Model
+#### 1. Header Model
 
 Header Model 需要实现 ```StickyHeaderModel``` 接口
 
@@ -45,7 +45,7 @@ public class Item {
 }
 ```
 
-### 2. Adapter
+#### 2. Adapter
 
 RecyclerView Adapter 需要实现 ```AdapterDataProvider``` 接口，并在 ```getAdapterData()``` 返回 model 数据，用于判断对应 position 是否为 Header
 
@@ -118,7 +118,7 @@ public final class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.
 }
 ```
 
-### 3. Setup
+#### 3. Setup
 
 ```java
 RecyclerView recyclerView = findViewById(R.id.recycler_view);
@@ -129,9 +129,9 @@ adapter.setDataList(genDataList(0));
 recyclerView.setAdapter(adapter);
 ```
 
-### 4. Feature
+#### 4. Features
 
-**Header Attach Listener**
+**(4.1) Header Attach Listener**
 
 ```java
 stickyLinearLayoutManager.setStickyHeaderListener(new StickyLinearLayoutManager.StickyHeaderListener() {
@@ -147,7 +147,7 @@ stickyLinearLayoutManager.setStickyHeaderListener(new StickyLinearLayoutManager.
 });
 ```
 
-**Elevation**
+**(4.2) Elevation**
 
 ```java
 layoutManager.elevateHeaders(true); // default value : 5dp
@@ -155,6 +155,8 @@ layoutManager.elevateHeaders(true); // default value : 5dp
 // or
 layoutManager.elevateHeaders(dpValue);
 ```
+
+Thanks: [StickyHeaders](https://github.com/bgogetap/StickyHeaders)
 
 ## LICENSE
 
