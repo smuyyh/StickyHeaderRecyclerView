@@ -7,12 +7,14 @@ RecyclerView 悬浮吸顶 Header，支持点击事件与状态绑定
 ## 依赖
 
 ```
-compile 'com.yuyang:stickyheaders:1.0.0'
+dependencies {
+    compile 'com.yuyang:stickyheaders:1.0.0'
+}
 ```
 
 ## 用法
 
-### Header Model
+### 1. Header Model
 
 Header Model 需要实现 ```StickyHeaderModel``` 接口
 
@@ -43,12 +45,12 @@ public class Item {
 }
 ```
 
-### Adapter
+### 2. Adapter
 
-RecyclerView Adapter 需要实现 ```StickyHeaderProvider``` 接口，并在 ```getAdapterData()``` 返回 model 数据，用于判断对应 position 是否为 Header
+RecyclerView Adapter 需要实现 ```AdapterDataProvider``` 接口，并在 ```getAdapterData()``` 返回 model 数据，用于判断对应 position 是否为 Header
 
 ```java
-public final class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.BaseViewHolder> implements StickyHeaderProvider {
+public final class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.BaseViewHolder> implements AdapterDataProvider {
 
     private final List<Object> dataList = new ArrayList<>();
 
@@ -116,16 +118,42 @@ public final class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.
 }
 ```
 
-### RecyclerView
+### 3. Setup
 
 ```java
 RecyclerView recyclerView = findViewById(R.id.recycler_view);
+recyclerView.setLayoutManager(new StickyLinearLayoutManager(this, adapter)); // StickyLinearLayoutManager 替代 LinearLayoutManager
+
 RecyclerAdapter adapter = new RecyclerAdapter();
 adapter.setDataList(genDataList(0));
-// StickyLinearLayoutManager 替代 LinearLayoutManager
-StickyLinearLayoutManager layoutManager = new StickyLinearLayoutManager(this, adapter);
-recyclerView.setLayoutManager(layoutManager);
 recyclerView.setAdapter(adapter);
+```
+
+### 4. Feature
+
+**Header Attach Listener**
+
+```java
+stickyLinearLayoutManager.setStickyHeaderListener(new StickyLinearLayoutManager.StickyHeaderListener() {
+    @Override
+    public void headerAttached(View headerView, int adapterPosition) {
+        Log.d("StickyHeaderRecyclerView", "Header Attached : " + adapterPosition);
+    }
+
+    @Override
+    public void headerDetached(View headerView, int adapterPosition) {
+        Log.d("StickyHeaderRecyclerView", "Header Detached : " + adapterPosition);
+    }
+});
+```
+
+**Elevation**
+
+```java
+layoutManager.elevateHeaders(true); // default value : 5dp
+
+// or
+layoutManager.elevateHeaders(dpValue);
 ```
 
 ## LICENSE

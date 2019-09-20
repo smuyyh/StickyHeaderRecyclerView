@@ -56,18 +56,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-        layoutManager.elevateHeaders(true);
+        layoutManager.elevateHeaders(5);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
         layoutManager.setStickyHeaderListener(new StickyLinearLayoutManager.StickyHeaderListener() {
             @Override
             public void headerAttached(View headerView, int adapterPosition) {
-                Log.d("Listener", "Header Attached : " + adapterPosition);
+                Log.d("StickyHeader", "Header Attached : " + adapterPosition);
             }
 
             @Override
             public void headerDetached(View headerView, int adapterPosition) {
-                Log.d("Listener", "Header Detached : " + adapterPosition);
+                Log.d("StickyHeader", "Header Detached : " + adapterPosition);
             }
         });
 

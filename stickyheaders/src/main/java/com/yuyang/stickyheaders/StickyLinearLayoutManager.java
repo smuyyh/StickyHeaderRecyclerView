@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class StickyLinearLayoutManager extends LinearLayoutManager {
 
-    private StickyHeaderProvider mHeaderProvider;
+    private AdapterDataProvider mHeaderProvider;
     private StickyHeaderHandler mHeaderHandler;
 
     private List<Integer> mHeaderPositions = new ArrayList<>();
@@ -29,11 +29,11 @@ public class StickyLinearLayoutManager extends LinearLayoutManager {
     @Nullable
     private StickyHeaderListener mHeaderListener;
 
-    public StickyLinearLayoutManager(Context context, StickyHeaderProvider headerProvider) {
+    public StickyLinearLayoutManager(Context context, AdapterDataProvider headerProvider) {
         this(context, VERTICAL, false, headerProvider);
     }
 
-    public StickyLinearLayoutManager(Context context, int orientation, boolean reverseLayout, StickyHeaderProvider headerProvider) {
+    public StickyLinearLayoutManager(Context context, int orientation, boolean reverseLayout, AdapterDataProvider headerProvider) {
         super(context, orientation, reverseLayout);
 
         this.mHeaderProvider = headerProvider;
@@ -47,7 +47,11 @@ public class StickyLinearLayoutManager extends LinearLayoutManager {
     }
 
     public void elevateHeaders(boolean elevateHeaders) {
-        this.headerElevation = elevateHeaders ? StickyHeaderHandler.DEFAULT_ELEVATION : StickyHeaderHandler.NO_ELEVATION;
+        elevateHeaders(elevateHeaders ? StickyHeaderHandler.DEFAULT_ELEVATION : StickyHeaderHandler.NO_ELEVATION);
+    }
+
+    public void elevateHeaders(int dpElevation) {
+        this.headerElevation = dpElevation > 0 ? dpElevation : StickyHeaderHandler.NO_ELEVATION;
         if (mHeaderHandler != null) {
             mHeaderHandler.setElevateHeaders(headerElevation);
         }

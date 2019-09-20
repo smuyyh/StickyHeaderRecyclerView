@@ -62,7 +62,7 @@ public final class StickyHeaderHandler {
     }
 
     /**
-     * @param firstVisiblePosition
+     * @param firstVisiblePosition 第一个可见item
      * @param visibleHeaders       当前可见的所有header位置
      * @param viewFactory          header视图构造器
      * @param atTop                第0个item完全可见

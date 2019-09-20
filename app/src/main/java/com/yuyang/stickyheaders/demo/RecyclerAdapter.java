@@ -6,14 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.yuyang.stickyheaders.StickyHeaderProvider;
+import com.yuyang.stickyheaders.AdapterDataProvider;
 import com.yuyang.stickyheaders.demo.model.HeaderItem;
 import com.yuyang.stickyheaders.demo.model.Item;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public final class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.BaseViewHolder> implements StickyHeaderProvider {
+public final class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.BaseViewHolder> implements AdapterDataProvider {
 
     private final List<Object> dataList = new ArrayList<>();
 
