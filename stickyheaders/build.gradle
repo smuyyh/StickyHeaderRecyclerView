@@ -51,7 +51,7 @@ publish {
     repoName = "maven"
     groupId = 'com.yuyang'
     artifactId = 'stickyheaders'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'RecyclerView Sticky Headers'
     website = 'https://github.com/smuyyh/StickyHeaderRecyclerView'
 }

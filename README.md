@@ -8,7 +8,7 @@ RecyclerView 悬浮吸顶 Header，支持点击事件与状态绑定
 
 ```
 dependencies {
-    compile 'com.yuyang:stickyheaders:1.0.0'
+    compile 'com.yuyang:stickyheaders:1.0.1'
 }
 ```
 
