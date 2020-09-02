@@ -1,9 +1,5 @@
 # StickyHeaderRecyclerView  ![](https://img.shields.io/github/v/release/smuyyh/StickyHeaderRecyclerView.svg) [![GitHub license](https://img.shields.io/github/license/smuyyh/StickyHeaderRecyclerView)](https://github.com/smuyyh/StickyHeaderRecyclerView/blob/master/LICENSE)
 
-BookReader is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial
-
-<a href="https://tracking.gitads.io/?repo=BookReader"> <img src="https://images.gitads.io/BookReader" alt="GitAds"/></a>
-
 RecyclerView 悬浮吸顶 Header，支持点击事件与状态绑定
 
 <img src="https://github.com/smuyyh/StickyHeaderRecyclerView/blob/master/art/screenshot.gif" width="216" height="400" ></img>
