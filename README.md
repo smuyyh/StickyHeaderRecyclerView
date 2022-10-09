@@ -7,8 +7,20 @@ RecyclerView 悬浮吸顶 Header，支持点击事件与状态绑定
 ## 依赖
 
 ```
+buildscript {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        ...
+    }
+}
+```
+
+```
 dependencies {
-    compile 'com.yuyang:stickyheaders:1.0.1'
+    implementation 'com.github.smuyyh:StickyHeaderRecyclerView:1.1.0'
 }
 ```
 
